@@ -325,3 +325,205 @@ Built-in examples:
 - `Function<T,R>`: T → R
 - `Consumer<T>`: T → void
 - `Supplier<T>`: () → T
+
+---
+
+## Java Version Features (8+)
+
+Each Java version has a corresponding runnable example class in the [`javaversions`](src/main/java/com/paul/fullstackinterviewprep/javaversions/) package.
+
+```bash
+# Run a specific version example
+./mvnw exec:java -Dexec.mainClass="com.paul.fullstackinterviewprep.javaversions.Java8Features"
+```
+
+### Version Overview
+
+| Version | Release | Type | Example Class | Key Features |
+|---------|---------|------|---------------|--------------|
+| [Java 8](#java-8-lts) | Mar 2014 | LTS | [Java8Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java8Features.java) | Lambdas, Streams, Optional, Date/Time API |
+| [Java 9](#java-9) | Sep 2017 | | [Java9Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java9Features.java) | Modules, `List.of()`, `takeWhile`/`dropWhile` |
+| [Java 10](#java-10) | Mar 2018 | | [Java10Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java10Features.java) | `var` keyword, `List.copyOf()` |
+| [Java 11](#java-11-lts) | Sep 2018 | LTS | [Java11Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java11Features.java) | String methods, HTTP Client, `Files.readString()` |
+| [Java 12](#java-12) | Mar 2019 | | [Java12Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java12Features.java) | Switch expressions, `indent()`, `transform()` |
+| [Java 13](#java-13) | Sep 2019 | | [Java13Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java13Features.java) | Text blocks (preview), `yield` |
+| [Java 14](#java-14) | Mar 2020 | | [Java14Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java14Features.java) | Records (preview), Pattern matching instanceof |
+| [Java 15](#java-15) | Sep 2020 | | [Java15Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java15Features.java) | Text blocks (standard), Sealed classes (preview) |
+| [Java 16](#java-16) | Mar 2021 | | [Java16Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java16Features.java) | Records (standard), `Stream.toList()` |
+| [Java 17](#java-17-lts) | Sep 2021 | LTS | [Java17Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java17Features.java) | Sealed classes (standard), Pattern switch |
+| [Java 21](#java-21-lts) | Sep 2023 | LTS | [Java21Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java21Features.java) | Virtual threads, Sequenced collections |
+| [Java 22](#java-22) | Mar 2024 | | [Java22Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java22Features.java) | Unnamed variables (`_`), Gatherers (preview) |
+| [Java 23](#java-23) | Sep 2024 | | [Java23Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java23Features.java) | Primitive patterns, Markdown docs |
+| [Java 24](#java-24) | Mar 2025 | | [Java24Features.java](src/main/java/com/paul/fullstackinterviewprep/javaversions/Java24Features.java) | Stream Gatherers (standard), Class-File API |
+
+---
+
+### Java 8 (LTS)
+
+**March 2014** - The most significant Java release, introducing functional programming.
+
+| Feature | Description |
+|---------|-------------|
+| Lambda Expressions | Anonymous functions: `(x) -> x * 2` |
+| Stream API | Functional operations on collections |
+| Optional | Container to avoid null checks |
+| Default Methods | Interface methods with implementations |
+| Method References | Shorthand: `String::toUpperCase` |
+| New Date/Time API | `java.time` package |
+| Functional Interfaces | Single abstract method interfaces |
+
+### Java 9
+
+**September 2017**
+
+| Feature | Description |
+|---------|-------------|
+| Module System (Jigsaw) | Modularize the JDK and applications |
+| JShell | Interactive REPL for Java |
+| Private Interface Methods | Private methods in interfaces |
+| Collection Factory Methods | `List.of()`, `Set.of()`, `Map.of()` |
+| Stream Improvements | `takeWhile`, `dropWhile`, `ofNullable` |
+
+### Java 10
+
+**March 2018**
+
+| Feature | Description |
+|---------|-------------|
+| Local Variable Type Inference | `var` keyword for local variables |
+| Unmodifiable Collections | `copyOf()` methods |
+| Optional.orElseThrow() | No-arg version throws NoSuchElementException |
+
+### Java 11 (LTS)
+
+**September 2018**
+
+| Feature | Description |
+|---------|-------------|
+| String Methods | `isBlank()`, `lines()`, `strip()`, `repeat()` |
+| Files Methods | `readString()`, `writeString()` |
+| HTTP Client API | Standardized from incubator |
+| var in Lambda | `var` in lambda parameters |
+
+### Java 12
+
+**March 2019**
+
+| Feature | Description |
+|---------|-------------|
+| Switch Expressions (Preview) | Switch as expression with arrow syntax |
+| String Methods | `indent()`, `transform()` |
+| Compact Number Formatting | Format numbers like "1K", "2M" |
+
+### Java 13
+
+**September 2019**
+
+| Feature | Description |
+|---------|-------------|
+| Text Blocks (Preview) | Multi-line string literals `"""` |
+| Switch yield | `yield` keyword for returning values |
+
+### Java 14
+
+**March 2020**
+
+| Feature | Description |
+|---------|-------------|
+| Switch Expressions (Standard) | Finalized from preview |
+| Records (Preview) | Immutable data classes |
+| Pattern Matching instanceof (Preview) | Type patterns |
+| Helpful NullPointerExceptions | Detailed NPE messages |
+
+### Java 15
+
+**September 2020**
+
+| Feature | Description |
+|---------|-------------|
+| Text Blocks (Standard) | Finalized from preview |
+| Sealed Classes (Preview) | Restrict class hierarchy |
+
+### Java 16
+
+**March 2021**
+
+| Feature | Description |
+|---------|-------------|
+| Records (Standard) | Finalized from preview |
+| Pattern Matching instanceof (Standard) | Finalized |
+| Stream.toList() | Convenient terminal operation |
+
+### Java 17 (LTS)
+
+**September 2021**
+
+| Feature | Description |
+|---------|-------------|
+| Sealed Classes (Standard) | Finalized from preview |
+| Pattern Matching for switch (Preview) | Type patterns in switch |
+| Enhanced Random Generators | New RandomGenerator interface |
+| HexFormat | Hex string formatting utility |
+
+### Java 21 (LTS)
+
+**September 2023**
+
+| Feature | Description |
+|---------|-------------|
+| Virtual Threads (Standard) | Lightweight threads (millions possible) |
+| Sequenced Collections | `addFirst`, `addLast`, `getFirst`, `getLast`, `reversed` |
+| Record Patterns (Standard) | Deconstruct records in patterns |
+| Pattern Matching for switch (Standard) | Finalized with guards |
+
+### Java 22
+
+**March 2024**
+
+| Feature | Description |
+|---------|-------------|
+| Unnamed Variables | `_` for unused variables |
+| Statements Before super() (Preview) | Validate before calling super |
+| Stream Gatherers (Preview) | Custom intermediate operations |
+
+### Java 23
+
+**September 2024**
+
+| Feature | Description |
+|---------|-------------|
+| Primitive Types in Patterns (Preview) | Match on primitives in switch |
+| Module Import Declarations (Preview) | `import module java.base;` |
+| Markdown Documentation Comments | Use `///` with Markdown syntax |
+
+### Java 24
+
+**March 2025**
+
+| Feature | Description |
+|---------|-------------|
+| Stream Gatherers (Standard) | `windowFixed`, `windowSliding`, `fold`, `scan` |
+| Class-File API (Standard) | Parse and generate class files |
+
+### Java 25 (Upcoming)
+
+**September 2025** - Expected LTS
+
+| Feature | Description |
+|---------|-------------|
+| Value Classes | Inline classes for performance |
+| Project Valhalla | Enhanced primitive types |
+
+---
+
+### LTS Release Schedule
+
+| Version | Release | Support Until |
+|---------|---------|---------------|
+| Java 8 | Mar 2014 | Dec 2030+ |
+| Java 11 | Sep 2018 | Sep 2026+ |
+| Java 17 | Sep 2021 | Sep 2029+ |
+| Java 21 | Sep 2023 | Sep 2031+ |
+| Java 25 | Sep 2025 | TBD |
+
+**Note**: Non-LTS versions receive updates for only 6 months.
