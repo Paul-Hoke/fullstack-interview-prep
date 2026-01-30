@@ -31,7 +31,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Structure
 
-Standard Maven layout with base package `com.paul.fullstack_interview_prep`:
+Standard Maven layout with base package `com.paul.fullstackinterviewprep`:
 - `src/main/java` - Application source code
   - `examples/` - 30 Java interview question examples (Q01-Q30), each with runnable main method
 - `src/main/resources` - Configuration (`application.properties`) and static assets
@@ -41,5 +41,5 @@ Standard Maven layout with base package `com.paul.fullstack_interview_prep`:
 
 ```bash
 # Run a specific interview question example
-./mvnw exec:java -Dexec.mainClass="com.paul.fullstack_interview_prep.examples.Q01_JdkJreJvm"
+./mvnw exec:java -Dexec.mainClass="com.paul.fullstackinterviewprep.examples.Q01_JdkJreJvm"
 ```

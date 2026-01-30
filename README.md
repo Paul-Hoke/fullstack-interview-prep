@@ -12,7 +12,7 @@ A Spring Boot project containing the top 30 Java interview questions with runnab
 ./mvnw spring-boot:run
 
 # Run a specific example
-./mvnw exec:java -Dexec.mainClass="com.paul.fullstack_interview_prep.examples.Q01_JdkJreJvm"
+./mvnw exec:java -Dexec.mainClass="com.paul.fullstackinterviewprep.examples.Q01_JdkJreJvm"
 ```
 
 ## Top 30 Java Interview Questions
@@ -23,76 +23,76 @@ Each question has a corresponding example class with a `main` method that can be
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 1 | [What is the difference between JDK, JRE, and JVM?](#q1-jdk-jre-jvm) | [Q01_JdkJreJvm.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q01_JdkJreJvm.java) |
-| 2 | [What is the difference between == and .equals()?](#q2-equals-vs-) | [Q02_EqualsVsDoubleEquals.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q02_EqualsVsDoubleEquals.java) |
-| 3 | [What is the difference between String, StringBuilder, and StringBuffer?](#q3-string-stringbuilder-stringbuffer) | [Q03_StringBuilderBuffer.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q03_StringBuilderBuffer.java) |
-| 4 | [What is the difference between abstract class and interface?](#q4-abstract-class-vs-interface) | [Q04_AbstractVsInterface.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q04_AbstractVsInterface.java) |
-| 5 | [What are the four pillars of OOP?](#q5-oop-principles) | [Q05_OopPrinciples.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q05_OopPrinciples.java) |
-| 6 | [What is the difference between method overloading and overriding?](#q6-overloading-vs-overriding) | [Q06_OverloadingVsOverriding.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q06_OverloadingVsOverriding.java) |
-| 7 | [What is the difference between final, finally, and finalize?](#q7-final-finally-finalize) | [Q07_FinalFinallyFinalize.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q07_FinalFinallyFinalize.java) |
+| 1 | [What is the difference between JDK, JRE, and JVM?](#q1-jdk-jre-jvm) | [Q01_JdkJreJvm.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q01_JdkJreJvm.java) |
+| 2 | [What is the difference between == and .equals()?](#q2-equals-vs-) | [Q02_EqualsVsDoubleEquals.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q02_EqualsVsDoubleEquals.java) |
+| 3 | [What is the difference between String, StringBuilder, and StringBuffer?](#q3-string-stringbuilder-stringbuffer) | [Q03_StringBuilderBuffer.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q03_StringBuilderBuffer.java) |
+| 4 | [What is the difference between abstract class and interface?](#q4-abstract-class-vs-interface) | [Q04_AbstractVsInterface.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q04_AbstractVsInterface.java) |
+| 5 | [What are the four pillars of OOP?](#q5-oop-principles) | [Q05_OopPrinciples.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q05_OopPrinciples.java) |
+| 6 | [What is the difference between method overloading and overriding?](#q6-overloading-vs-overriding) | [Q06_OverloadingVsOverriding.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q06_OverloadingVsOverriding.java) |
+| 7 | [What is the difference between final, finally, and finalize?](#q7-final-finally-finalize) | [Q07_FinalFinallyFinalize.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q07_FinalFinallyFinalize.java) |
 
 ### Exceptions and Error Handling
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 8 | [What is the difference between checked and unchecked exceptions?](#q8-checked-vs-unchecked-exceptions) | [Q08_CheckedVsUnchecked.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q08_CheckedVsUnchecked.java) |
+| 8 | [What is the difference between checked and unchecked exceptions?](#q8-checked-vs-unchecked-exceptions) | [Q08_CheckedVsUnchecked.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q08_CheckedVsUnchecked.java) |
 
 ### Collections Framework
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 9 | [What is the difference between ArrayList and LinkedList?](#q9-arraylist-vs-linkedlist) | [Q09_ArrayListVsLinkedList.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q09_ArrayListVsLinkedList.java) |
-| 10 | [What is the difference between HashMap and Hashtable?](#q10-hashmap-vs-hashtable) | [Q10_HashMapVsHashtable.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q10_HashMapVsHashtable.java) |
-| 11 | [What is the difference between Comparable and Comparator?](#q11-comparable-vs-comparator) | [Q11_ComparableVsComparator.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q11_ComparableVsComparator.java) |
-| 22 | [What is the difference between fail-fast and fail-safe iterators?](#q22-fail-fast-vs-fail-safe) | [Q22_FailFastVsFailSafe.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q22_FailFastVsFailSafe.java) |
+| 9 | [What is the difference between ArrayList and LinkedList?](#q9-arraylist-vs-linkedlist) | [Q09_ArrayListVsLinkedList.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q09_ArrayListVsLinkedList.java) |
+| 10 | [What is the difference between HashMap and Hashtable?](#q10-hashmap-vs-hashtable) | [Q10_HashMapVsHashtable.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q10_HashMapVsHashtable.java) |
+| 11 | [What is the difference between Comparable and Comparator?](#q11-comparable-vs-comparator) | [Q11_ComparableVsComparator.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q11_ComparableVsComparator.java) |
+| 22 | [What is the difference between fail-fast and fail-safe iterators?](#q22-fail-fast-vs-fail-safe) | [Q22_FailFastVsFailSafe.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q22_FailFastVsFailSafe.java) |
 
 ### Keywords and Modifiers
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 12 | [What are Java access modifiers?](#q12-access-modifiers) | [Q12_AccessModifiers.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q12_AccessModifiers.java) |
-| 13 | [What is the static keyword?](#q13-static-keyword) | [Q13_StaticKeyword.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q13_StaticKeyword.java) |
-| 18 | [What is the volatile keyword?](#q18-volatile-keyword) | [Q18_VolatileKeyword.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q18_VolatileKeyword.java) |
+| 12 | [What are Java access modifiers?](#q12-access-modifiers) | [Q12_AccessModifiers.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q12_AccessModifiers.java) |
+| 13 | [What is the static keyword?](#q13-static-keyword) | [Q13_StaticKeyword.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q13_StaticKeyword.java) |
+| 18 | [What is the volatile keyword?](#q18-volatile-keyword) | [Q18_VolatileKeyword.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q18_VolatileKeyword.java) |
 
 ### Memory Management
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 14 | [What is the difference between stack and heap memory?](#q14-stack-vs-heap) | [Q14_StackVsHeap.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q14_StackVsHeap.java) |
-| 15 | [What is Garbage Collection?](#q15-garbage-collection) | [Q15_GarbageCollection.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q15_GarbageCollection.java) |
+| 14 | [What is the difference between stack and heap memory?](#q14-stack-vs-heap) | [Q14_StackVsHeap.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q14_StackVsHeap.java) |
+| 15 | [What is Garbage Collection?](#q15-garbage-collection) | [Q15_GarbageCollection.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q15_GarbageCollection.java) |
 
 ### Multithreading and Concurrency
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 16 | [What is multithreading and how do you create threads?](#q16-multithreading) | [Q16_Multithreading.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q16_Multithreading.java) |
-| 17 | [What is synchronization?](#q17-synchronization) | [Q17_Synchronization.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q17_Synchronization.java) |
+| 16 | [What is multithreading and how do you create threads?](#q16-multithreading) | [Q16_Multithreading.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q16_Multithreading.java) |
+| 17 | [What is synchronization?](#q17-synchronization) | [Q17_Synchronization.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q17_Synchronization.java) |
 
 ### Java 8+ Features
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 19 | [What are Lambda Expressions?](#q19-lambda-expressions) | [Q19_LambdaExpressions.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q19_LambdaExpressions.java) |
-| 20 | [What are Streams?](#q20-streams) | [Q20_Streams.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q20_Streams.java) |
-| 21 | [What is the Optional class?](#q21-optional-class) | [Q21_OptionalClass.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q21_OptionalClass.java) |
-| 30 | [What are Functional Interfaces?](#q30-functional-interfaces) | [Q30_FunctionalInterfaces.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q30_FunctionalInterfaces.java) |
+| 19 | [What are Lambda Expressions?](#q19-lambda-expressions) | [Q19_LambdaExpressions.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q19_LambdaExpressions.java) |
+| 20 | [What are Streams?](#q20-streams) | [Q20_Streams.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q20_Streams.java) |
+| 21 | [What is the Optional class?](#q21-optional-class) | [Q21_OptionalClass.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q21_OptionalClass.java) |
+| 30 | [What are Functional Interfaces?](#q30-functional-interfaces) | [Q30_FunctionalInterfaces.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q30_FunctionalInterfaces.java) |
 
 ### Object-Oriented Design
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 23 | [What is the difference between shallow copy and deep copy?](#q23-shallow-vs-deep-copy) | [Q23_ShallowVsDeepCopy.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q23_ShallowVsDeepCopy.java) |
-| 24 | [What is immutability?](#q24-immutability) | [Q24_Immutability.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q24_Immutability.java) |
-| 25 | [What are Design Patterns?](#q25-design-patterns) | [Q25_DesignPatterns.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q25_DesignPatterns.java) |
-| 26 | [What is Dependency Injection?](#q26-dependency-injection) | [Q26_DependencyInjection.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q26_DependencyInjection.java) |
-| 27 | [What is the difference between Composition and Inheritance?](#q27-composition-vs-inheritance) | [Q27_CompositionVsInheritance.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q27_CompositionVsInheritance.java) |
+| 23 | [What is the difference between shallow copy and deep copy?](#q23-shallow-vs-deep-copy) | [Q23_ShallowVsDeepCopy.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q23_ShallowVsDeepCopy.java) |
+| 24 | [What is immutability?](#q24-immutability) | [Q24_Immutability.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q24_Immutability.java) |
+| 25 | [What are Design Patterns?](#q25-design-patterns) | [Q25_DesignPatterns.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q25_DesignPatterns.java) |
+| 26 | [What is Dependency Injection?](#q26-dependency-injection) | [Q26_DependencyInjection.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q26_DependencyInjection.java) |
+| 27 | [What is the difference between Composition and Inheritance?](#q27-composition-vs-inheritance) | [Q27_CompositionVsInheritance.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q27_CompositionVsInheritance.java) |
 
 ### Advanced Topics
 
 | # | Question | Example Class |
 |---|----------|---------------|
-| 28 | [What are Generics?](#q28-generics) | [Q28_Generics.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q28_Generics.java) |
-| 29 | [What is Reflection?](#q29-reflection) | [Q29_Reflection.java](src/main/java/com/paul/fullstack_interview_prep/examples/Q29_Reflection.java) |
+| 28 | [What are Generics?](#q28-generics) | [Q28_Generics.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q28_Generics.java) |
+| 29 | [What is Reflection?](#q29-reflection) | [Q29_Reflection.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q29_Reflection.java) |
 
 ---
 
