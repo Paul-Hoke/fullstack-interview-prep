@@ -84,7 +84,7 @@ Each question has a corresponding example class with a `main` method that can be
 | 23 | [What is the difference between shallow copy and deep copy?](#q23-shallow-vs-deep-copy) | [Q23_ShallowVsDeepCopy.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q23_ShallowVsDeepCopy.java) |
 | 24 | [What is immutability?](#q24-immutability) | [Q24_Immutability.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q24_Immutability.java) |
 | 25 | [What are Design Patterns?](#q25-design-patterns) | [Q25_DesignPatterns.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q25_DesignPatterns.java) |
-| 26 | [What is Dependency Injection?](#q26-dependency-injection) | [Q26_DependencyInjection.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q26_DependencyInjection.java) |
+| 26 | [What is Dependency Injection?](#q26-dependency-injection) | [Q26_DependencyInjection.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q26_DependencyInjection.java), [Spring DI Examples](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/) |
 | 27 | [What is the difference between Composition and Inheritance?](#q27-composition-vs-inheritance) | [Q27_CompositionVsInheritance.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q27_CompositionVsInheritance.java) |
 
 ### Advanced Topics
@@ -273,6 +273,30 @@ Dependencies provided to a class rather than created by it. Types:
 1. Constructor Injection (preferred)
 2. Setter Injection
 3. Field Injection
+
+#### Spring DI Examples
+
+The [`dependencyinjection`](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/) package demonstrates real Spring Framework DI patterns:
+
+| Class | Description |
+|-------|-------------|
+| [DIComponent](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/DIComponent.java) | Bean defined using `@Component` stereotype annotation |
+| [DIConfiguration](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/DIConfiguration.java) | Java-based configuration using `@Configuration` + `@Bean` |
+| [BaseBean](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/BaseBean.java) | Abstract base class for bean inheritance |
+| [MyBean1](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/MyBean1.java) | Extends BaseBean, overrides `getName()` |
+| [MyBean2](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/MyBean2.java) | Extends BaseBean, uses inherited `getName()` |
+| [StartupApplicationListener](src/main/java/com/paul/fullstackinterviewprep/dependencyinjection/StartupApplicationListener.java) | Demonstrates constructor injection with `@RequiredArgsConstructor` |
+
+**Key Concepts Demonstrated:**
+- `@Component` vs `@Configuration` + `@Bean` for bean registration
+- Constructor injection using Lombok's `@RequiredArgsConstructor`
+- `@EventListener` with `ApplicationReadyEvent` for startup logic
+- Bean inheritance and method overriding
+
+Run the application to see the DI in action:
+```bash
+./mvnw spring-boot:run
+```
 
 ### Q27: Composition vs Inheritance
 
