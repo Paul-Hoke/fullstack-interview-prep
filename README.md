@@ -527,3 +527,369 @@ Each Java version has a corresponding runnable example class in the [`javaversio
 | Java 25 | Sep 2025 | TBD |
 
 **Note**: Non-LTS versions receive updates for only 6 months.
+
+---
+
+## Top 30 SQL Interview Questions
+
+The application initializes an H2 in-memory database on startup with sample data. Access the H2 console at:
+- URL: http://localhost:8080/h2-console
+- JDBC URL: `jdbc:h2:mem:interviewdb`
+- Username: `sa`
+- Password: (leave empty)
+
+Each question has a corresponding SQL file with runnable examples against the sample database.
+
+### Database Schema
+
+The sample database includes:
+- **employees** - Employee records with hierarchy (manager_id self-reference)
+- **departments** - Department information with budgets
+- **customers** - Customer data for order examples
+- **products** - Product catalog with categories
+- **categories** - Hierarchical product categories
+- **suppliers** - Product suppliers
+- **orders** - Customer orders
+- **order_items** - Order line items (many-to-many)
+- **inventory** - Stock change tracking
+- **audit_log** - For trigger demonstrations
+
+See [schema.sql](src/main/resources/db/schema.sql) and [data.sql](src/main/resources/db/data.sql) for details.
+
+### SQL Basics
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 1 | [What is SQL and basic SELECT statement?](#sql-q1-select-basics) | [Q01_SelectBasics.sql](src/main/resources/db/sql/Q01_SelectBasics.sql) |
+| 2 | [How do you filter data using WHERE clause?](#sql-q2-where-clause) | [Q02_WhereClause.sql](src/main/resources/db/sql/Q02_WhereClause.sql) |
+| 3 | [How do you sort results using ORDER BY?](#sql-q3-order-by) | [Q03_OrderBy.sql](src/main/resources/db/sql/Q03_OrderBy.sql) |
+
+### JOINs and Set Operations
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 4 | [What are the different types of JOINs?](#sql-q4-joins) | [Q04_Joins.sql](src/main/resources/db/sql/Q04_Joins.sql) |
+| 8 | [What are UNION, INTERSECT, and EXCEPT?](#sql-q8-set-operations) | [Q08_UnionIntersectExcept.sql](src/main/resources/db/sql/Q08_UnionIntersectExcept.sql) |
+| 25 | [What is a self-join and when would you use it?](#sql-q25-self-join) | [Q25_SelfJoin.sql](src/main/resources/db/sql/Q25_SelfJoin.sql) |
+
+### Aggregation and Grouping
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 5 | [What is GROUP BY and HAVING clause?](#sql-q5-group-by-having) | [Q05_GroupByHaving.sql](src/main/resources/db/sql/Q05_GroupByHaving.sql) |
+| 6 | [What are aggregate functions in SQL?](#sql-q6-aggregate-functions) | [Q06_AggregateFunctions.sql](src/main/resources/db/sql/Q06_AggregateFunctions.sql) |
+| 14 | [What are window functions?](#sql-q14-window-functions) | [Q14_WindowFunctions.sql](src/main/resources/db/sql/Q14_WindowFunctions.sql) |
+
+### Subqueries and CTEs
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 7 | [What are subqueries and how do you use them?](#sql-q7-subqueries) | [Q07_Subqueries.sql](src/main/resources/db/sql/Q07_Subqueries.sql) |
+| 21 | [What are Common Table Expressions (CTEs)?](#sql-q21-ctes) | [Q21_CTEs.sql](src/main/resources/db/sql/Q21_CTEs.sql) |
+| 24 | [What is the difference between EXISTS and IN?](#sql-q24-exists-vs-in) | [Q24_ExistsVsIn.sql](src/main/resources/db/sql/Q24_ExistsVsIn.sql) |
+
+### Functions
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 9 | [How do you handle NULL values in SQL?](#sql-q9-null-handling) | [Q09_NullHandling.sql](src/main/resources/db/sql/Q09_NullHandling.sql) |
+| 10 | [How do you use CASE expressions?](#sql-q10-case-expressions) | [Q10_CaseExpressions.sql](src/main/resources/db/sql/Q10_CaseExpressions.sql) |
+| 11 | [What are common string functions in SQL?](#sql-q11-string-functions) | [Q11_StringFunctions.sql](src/main/resources/db/sql/Q11_StringFunctions.sql) |
+| 12 | [What are common date/time functions in SQL?](#sql-q12-date-functions) | [Q12_DateFunctions.sql](src/main/resources/db/sql/Q12_DateFunctions.sql) |
+| 13 | [What are common numeric functions in SQL?](#sql-q13-numeric-functions) | [Q13_NumericFunctions.sql](src/main/resources/db/sql/Q13_NumericFunctions.sql) |
+
+### Database Objects
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 15 | [What are views and why use them?](#sql-q15-views) | [Q15_Views.sql](src/main/resources/db/sql/Q15_Views.sql) |
+| 16 | [What are indexes and how do they improve performance?](#sql-q16-indexes) | [Q16_Indexes.sql](src/main/resources/db/sql/Q16_Indexes.sql) |
+| 17 | [What are constraints in SQL?](#sql-q17-constraints) | [Q17_Constraints.sql](src/main/resources/db/sql/Q17_Constraints.sql) |
+| 19 | [What are stored procedures and functions?](#sql-q19-stored-procedures) | [Q19_StoredProcedures.sql](src/main/resources/db/sql/Q19_StoredProcedures.sql) |
+| 20 | [What are triggers?](#sql-q20-triggers) | [Q20_Triggers.sql](src/main/resources/db/sql/Q20_Triggers.sql) |
+
+### Data Manipulation
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 23 | [How do INSERT, UPDATE, and DELETE work?](#sql-q23-insert-update-delete) | [Q23_InsertUpdateDelete.sql](src/main/resources/db/sql/Q23_InsertUpdateDelete.sql) |
+
+### Transactions and Concurrency
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 18 | [What are transactions and ACID properties?](#sql-q18-transactions) | [Q18_Transactions.sql](src/main/resources/db/sql/Q18_Transactions.sql) |
+| 27 | [What are deadlocks and how do you prevent them?](#sql-q27-deadlocks) | [Q27_DeadlocksLocking.sql](src/main/resources/db/sql/Q27_DeadlocksLocking.sql) |
+
+### Performance and Design
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 22 | [What is database normalization?](#sql-q22-normalization) | [Q22_Normalization.sql](src/main/resources/db/sql/Q22_Normalization.sql) |
+| 26 | [How do you implement pagination in SQL?](#sql-q26-pagination) | [Q26_Pagination.sql](src/main/resources/db/sql/Q26_Pagination.sql) |
+| 28 | [How do you optimize SQL queries?](#sql-q28-query-optimization) | [Q28_QueryOptimization.sql](src/main/resources/db/sql/Q28_QueryOptimization.sql) |
+
+### Data Types and Security
+
+| # | Question | SQL File |
+|---|----------|----------|
+| 29 | [What are the common SQL data types?](#sql-q29-data-types) | [Q29_DataTypes.sql](src/main/resources/db/sql/Q29_DataTypes.sql) |
+| 30 | [What are prepared statements and why use them?](#sql-q30-prepared-statements) | [Q30_PreparedStatements.sql](src/main/resources/db/sql/Q30_PreparedStatements.sql) |
+
+---
+
+## SQL Question Details
+
+### SQL Q1: SELECT Basics
+
+The `SELECT` statement retrieves data from tables:
+- `SELECT *` - all columns
+- `SELECT col1, col2` - specific columns
+- `SELECT DISTINCT` - remove duplicates
+- Column aliases with `AS`
+- `LIMIT` and `OFFSET` for pagination
+
+### SQL Q2: WHERE Clause
+
+Filter rows with conditions:
+- Comparison: `=`, `!=`, `<`, `>`, `<=`, `>=`
+- Logical: `AND`, `OR`, `NOT`
+- Range: `BETWEEN`
+- List: `IN`
+- Pattern: `LIKE` with `%` and `_`
+- Null check: `IS NULL`, `IS NOT NULL`
+
+### SQL Q3: ORDER BY
+
+Sort results:
+- `ASC` (ascending, default)
+- `DESC` (descending)
+- Multiple columns
+- `NULLS FIRST` / `NULLS LAST`
+
+### SQL Q4: JOINs
+
+| Type | Description |
+|------|-------------|
+| INNER JOIN | Only matching rows |
+| LEFT JOIN | All left + matching right |
+| RIGHT JOIN | Matching left + all right |
+| FULL OUTER JOIN | All from both tables |
+| CROSS JOIN | Cartesian product |
+| Self JOIN | Table joined to itself |
+
+### SQL Q5: GROUP BY and HAVING
+
+- `GROUP BY` groups rows for aggregation
+- `HAVING` filters groups (after grouping)
+- `WHERE` filters rows (before grouping)
+
+### SQL Q6: Aggregate Functions
+
+| Function | Description |
+|----------|-------------|
+| COUNT() | Count rows |
+| SUM() | Sum values |
+| AVG() | Average value |
+| MIN() | Minimum value |
+| MAX() | Maximum value |
+
+### SQL Q7: Subqueries
+
+Queries nested inside other queries:
+- Scalar subquery (single value)
+- IN/NOT IN subqueries
+- EXISTS/NOT EXISTS (correlated)
+- Subquery in FROM (derived table)
+- Subquery in SELECT
+
+### SQL Q8: Set Operations
+
+| Operation | Description |
+|-----------|-------------|
+| UNION | Combine, remove duplicates |
+| UNION ALL | Combine, keep duplicates |
+| INTERSECT | Only in both |
+| EXCEPT | In first, not in second |
+
+### SQL Q9: NULL Handling
+
+- `IS NULL` / `IS NOT NULL` for checking
+- `COALESCE(a, b, c)` - first non-NULL
+- `NULLIF(a, b)` - NULL if equal
+- NULL in arithmetic = NULL
+- Aggregates ignore NULL
+
+### SQL Q10: CASE Expressions
+
+Conditional logic in SQL:
+```sql
+CASE
+  WHEN condition THEN result
+  ELSE default
+END
+```
+
+### SQL Q11: String Functions
+
+`CONCAT`, `LENGTH`, `UPPER`, `LOWER`, `TRIM`, `SUBSTRING`, `REPLACE`, `LPAD`, `RPAD`
+
+### SQL Q12: Date Functions
+
+`CURRENT_DATE`, `EXTRACT`, `DATEADD`, `DATEDIFF`, `YEAR`, `MONTH`, `DAY`
+
+### SQL Q13: Numeric Functions
+
+`ROUND`, `FLOOR`, `CEILING`, `ABS`, `MOD`, `POWER`, `SQRT`
+
+### SQL Q14: Window Functions
+
+Calculations across related rows without collapsing:
+- `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`
+- `LAG()`, `LEAD()`
+- `SUM() OVER()`, `AVG() OVER()`
+- `PARTITION BY` for grouping
+- `ORDER BY` for ordering
+
+### SQL Q15: Views
+
+Virtual tables from saved queries:
+- Simplify complex queries
+- Provide abstraction
+- Implement security
+- Encapsulate business logic
+
+### SQL Q16: Indexes
+
+Data structures for faster queries:
+- B-tree (default)
+- Composite (multiple columns)
+- Unique indexes
+- Trade-off: faster reads, slower writes
+
+### SQL Q17: Constraints
+
+| Constraint | Purpose |
+|------------|---------|
+| PRIMARY KEY | Unique row identifier |
+| FOREIGN KEY | Referential integrity |
+| UNIQUE | No duplicate values |
+| NOT NULL | Required value |
+| CHECK | Custom validation |
+| DEFAULT | Default value |
+
+### SQL Q18: Transactions
+
+ACID properties:
+- **Atomicity**: All or nothing
+- **Consistency**: Valid state to valid state
+- **Isolation**: Concurrent independence
+- **Durability**: Permanent once committed
+
+Commands: `BEGIN`, `COMMIT`, `ROLLBACK`, `SAVEPOINT`
+
+### SQL Q19: Stored Procedures
+
+Precompiled SQL code stored in database:
+- Encapsulate business logic
+- Reduce network traffic
+- Improved security
+- Code reuse
+
+### SQL Q20: Triggers
+
+Automatic actions on data changes:
+- BEFORE/AFTER triggers
+- INSERT/UPDATE/DELETE events
+- Use for auditing, validation, cascading
+
+### SQL Q21: CTEs (Common Table Expressions)
+
+Named temporary result sets:
+```sql
+WITH cte_name AS (
+  SELECT ...
+)
+SELECT * FROM cte_name;
+```
+- Improve readability
+- Enable recursion
+- Can reference multiple times
+
+### SQL Q22: Normalization
+
+| Form | Rule |
+|------|------|
+| 1NF | Atomic values, unique rows |
+| 2NF | No partial dependencies |
+| 3NF | No transitive dependencies |
+
+Reduces redundancy, improves integrity.
+
+### SQL Q23: INSERT, UPDATE, DELETE
+
+- `INSERT INTO ... VALUES` - add rows
+- `UPDATE ... SET ... WHERE` - modify rows
+- `DELETE FROM ... WHERE` - remove rows
+
+Always use WHERE with UPDATE/DELETE!
+
+### SQL Q24: EXISTS vs IN
+
+| Aspect | IN | EXISTS |
+|--------|-----|--------|
+| NULL handling | Issues with NOT IN | Handles correctly |
+| Execution | Materializes subquery | Stops at first match |
+| Best for | Small result sets | Large tables, correlated |
+
+### SQL Q25: Self-Join
+
+Table joined to itself:
+- Employee-manager hierarchies
+- Category trees
+- Finding related rows
+- Comparing rows in same table
+
+### SQL Q26: Pagination
+
+| Method | Pros | Cons |
+|--------|------|------|
+| LIMIT/OFFSET | Simple | Slow for large offsets |
+| Keyset | Efficient | Can't jump to page |
+| ROW_NUMBER | Flexible | Still numbers all rows |
+
+### SQL Q27: Deadlocks
+
+Prevention strategies:
+- Access resources in consistent order
+- Keep transactions short
+- Use appropriate isolation levels
+- Set lock timeouts
+
+### SQL Q28: Query Optimization
+
+1. Use `EXPLAIN` to analyze
+2. Add indexes on WHERE/JOIN/ORDER BY columns
+3. Avoid `SELECT *`
+4. Rewrite subqueries as JOINs
+5. Use `LIMIT` to restrict results
+6. Avoid functions on indexed columns
+
+### SQL Q29: Data Types
+
+| Category | Types |
+|----------|-------|
+| Numeric | INT, DECIMAL, FLOAT |
+| String | CHAR, VARCHAR, TEXT |
+| Date/Time | DATE, TIME, TIMESTAMP |
+| Boolean | BOOLEAN |
+| Binary | BLOB, VARBINARY |
+
+### SQL Q30: Prepared Statements
+
+Benefits:
+- **Security**: Prevents SQL injection
+- **Performance**: Query parsed once
+- **Maintainability**: Cleaner code
+
+Always use for user input!
