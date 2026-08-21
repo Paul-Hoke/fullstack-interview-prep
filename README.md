@@ -1,6 +1,6 @@
 # Fullstack Interview Prep
 
-A Spring Boot project containing the top 30 Java interview questions with runnable code examples.
+A Spring Boot project containing the top 34 Java interview questions with runnable code examples.
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ A Spring Boot project containing the top 30 Java interview questions with runnab
 ./mvnw exec:java -Dexec.mainClass="com.paul.fullstackinterviewprep.examples.Q01_JdkJreJvm"
 ```
 
-## Top 30 Java Interview Questions
+## Top 34 Java Interview Questions
 
 Each question has a corresponding example class with a `main` method that can be run independently.
 
@@ -30,6 +30,8 @@ Each question has a corresponding example class with a `main` method that can be
 | 5 | [What are the four pillars of OOP?](#q5-oop-principles) | [Q05_OopPrinciples.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q05_OopPrinciples.java) |
 | 6 | [What is the difference between method overloading and overriding?](#q6-overloading-vs-overriding) | [Q06_OverloadingVsOverriding.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q06_OverloadingVsOverriding.java) |
 | 7 | [What is the difference between final, finally, and finalize?](#q7-final-finally-finalize) | [Q07_FinalFinallyFinalize.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q07_FinalFinallyFinalize.java) |
+| 31 | [Why are Strings considered immutable in Java?](#q31-string-immutability) | [Q31_StringImmutability.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q31_StringImmutability.java) |
+| 33 | [Is Java pass-by-value or pass-by-reference?](#q33-pass-by-value-vs-reference) | [Q33_PassByValueOrReference.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q33_PassByValueOrReference.java) |
 
 ### Exceptions and Error Handling
 
@@ -93,6 +95,13 @@ Each question has a corresponding example class with a `main` method that can be
 |---|----------|---------------|
 | 28 | [What are Generics?](#q28-generics) | [Q28_Generics.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q28_Generics.java) |
 | 29 | [What is Reflection?](#q29-reflection) | [Q29_Reflection.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q29_Reflection.java) |
+
+### Backend & Spring Concepts
+
+| # | Question | Example Class |
+|---|----------|---------------|
+| 32 | [Explain a connection pool.](#q32-connection-pool) | [Q32_ConnectionPool.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q32_ConnectionPool.java) |
+| 34 | [How does @Transactional work in Spring and when should you use it?](#q34-transactional-annotation) | [Q34_TransactionalAnnotation.java](src/main/java/com/paul/fullstackinterviewprep/examples/Q34_TransactionalAnnotation.java) |
 
 ---
 
@@ -325,6 +334,46 @@ Built-in examples:
 - `Function<T,R>`: T → R
 - `Consumer<T>`: T → void
 - `Supplier<T>`: () → T
+
+### Q31: String Immutability
+
+Strings are immutable — every "mutating" method returns a new object. Reasons:
+1. **String pool**: literals can be safely shared/interned across the JVM
+2. **Security**: Strings are used for class names, file paths, DB URLs — a mutable String could be changed after a security check but before use
+3. **Thread safety**: no synchronization needed to share across threads
+4. **Cached hashCode**: safe to cache since the value can never change, making String a fast, reliable hash key
+5. **Class loading**: guarantees the class loaded matches the name requested
+
+### Q32: Connection Pool
+
+A cache of pre-established, reusable connections (usually database connections). Instead of opening/closing a physical connection per request:
+- Callers **borrow** a connection from the pool and **return** it when done
+- Avoids the cost of repeated handshakes (TCP + auth + TLS + session setup)
+- Caps concurrent connections against the database's hard limit
+- Provides backpressure — callers wait (with a timeout) instead of overwhelming the DB
+
+Key settings: min/max pool size, connection timeout, idle timeout/max lifetime, validation on borrow. Spring Boot defaults to **HikariCP**, implementing the vendor-agnostic `javax.sql.DataSource`.
+
+### Q33: Pass-by-Value vs Pass-by-Reference
+
+Java is **always pass-by-value** — there is no pass-by-reference. For objects, the *reference* (pointer) is copied by value:
+- You **can** mutate the object's state through the copied reference (both point at the same object)
+- You **cannot** make the caller's reference point at a different object by reassigning the parameter — that only rebinds the local copy
+
+Strings appear "pass-by-value" for a different reason: they're immutable, so any "modification" just creates a new object that the caller never sees.
+
+### Q34: @Transactional Annotation
+
+`@Transactional` wraps a method in a database transaction: begins before the method runs, commits on normal return, rolls back on exception.
+
+**How it works**: Spring wraps the bean in an AOP **proxy** (JDK dynamic proxy or CGLIB). The proxy's `TransactionInterceptor` opens a transaction before the real method runs and commits/rolls back after.
+
+Key gotchas:
+- Only rolls back on **unchecked** exceptions by default — use `rollbackFor = Exception.class` for checked exceptions
+- **Self-invocation bypasses the proxy** — calling `this.otherMethod()` from within the same class skips the transactional advice entirely
+- `Propagation.REQUIRED` (default) joins an existing transaction; `REQUIRES_NEW` always starts a fresh one
+- Apply at the **service layer**, not the repository layer, so one business operation spanning multiple repository calls shares a single transaction
+- Avoid wrapping long-running methods (external calls) — it holds a DB connection open the whole time, see [Q32](#q32-connection-pool)
 
 ---
 
