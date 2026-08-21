@@ -42,4 +42,31 @@ Standard Maven layout with base package `com.paul.fullstackinterviewprep`:
 ```bash
 # Run a specific interview question example
 ./mvnw exec:java -Dexec.mainClass="com.paul.fullstackinterviewprep.examples.Q01_JdkJreJvm"
+
+# Run a HackerRank or javaversions example the same way
+./mvnw exec:java -Dexec.mainClass="com.paul.fullstackinterviewprep.hackerrank.medium.JavaRegex"
+./mvnw exec:java -Dexec.mainClass="com.paul.fullstackinterviewprep.javaversions.Java24Features"
 ```
+
+## Architecture
+
+The project has two modes of operation:
+
+1. **Standalone examples** — Every class under `examples/`, `hackerrank/medium/`, and `javaversions/` has a `public static void main` and runs independently via `exec:java`. These have no Spring dependencies.
+
+2. **Spring Boot application** — `./mvnw spring-boot:run` starts a web server. The `dependencyinjection/` package demonstrates Spring IoC; the H2 console is accessible at `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:interviewdb`, user `sa`, no password). Database schema and seed data are in `src/main/resources/db/schema.sql` and `data.sql`.
+
+### Package layout
+
+| Package | Purpose |
+|---------|---------|
+| `examples/` | Q01–Q30 standalone interview question demos |
+| `hackerrank/medium/` | HackerRank medium-difficulty coding problems |
+| `javaversions/` | Feature demos per Java release (8, 9, 11–16, 24) |
+| `dependencyinjection/` | Spring DI with `@Configuration`, `@Bean`, and `ApplicationListener` |
+
+### Example class conventions
+
+- Use static nested classes to keep a topic self-contained in one file.
+- Each file's `main()` prints output that demonstrates the concept.
+- No Spring context is needed unless the class lives under `dependencyinjection/`.
